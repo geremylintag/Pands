@@ -1,0 +1,13 @@
+import pandas as pd
+d = pd.read_csv('cars.csv')
+e = d[d.index%2 != 0].head()
+f = d[d['Model'] == 'Mazda RX4']
+g = d[d['Model'] == 'Camaro Z28'].loc[d['Model'] == 'Camaro Z28',['cyl']]
+h = d.loc[d['Model'] == 'Mazda RX4 Wag',['cyl','gear']]
+i = d.loc[d['Model'] == 'Ford Pantera L',['cyl','gear']]
+j = d.loc[d['Model'] == 'Honda Civic',['cyl','gear']]
+k = pd.concat([h,i,j])
+print('a)\n',e,'\n')
+print('b)\n',f,'\n')
+print('c)\n',g,'\n')
+print('d)\n',k)
